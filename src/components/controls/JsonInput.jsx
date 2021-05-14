@@ -1,12 +1,12 @@
 import React from 'react';
 
-function JsonInput({ json, onInputChange }) {
+function JsonInput({ value, onChange }) {
   return (
     <textarea
       placeholder="Raw JSON Body"
-      name="body"
-      value={json}
-      onChange={onInputChange}
+      name="jsonValue"
+      value={value}
+      onInput={onChange}
     />
   );
 }

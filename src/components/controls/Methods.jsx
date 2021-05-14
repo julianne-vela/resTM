@@ -1,18 +1,11 @@
 import React from 'react';
 
-function Methods({ value, onInputChange }) {
+function Methods({ method, onChange, methodSelected }) {
   return (
-    <>
-      <label>
-        {value}
-        <input
-          type="radio"
-          name="method"
-          value={value}
-          onChange={onInputChange}
-        />
-      </label>
-    </>
+    <label>
+      {method}
+      <input type="radio" name="method" value={method} onChange={onChange} />
+    </label>
   );
 }
 

@@ -10,7 +10,12 @@ function Form({ onSubmit, onInputChange, url, json }) {
       <UrlInput value={url} onChange={onInputChange} />
       <section>
         {methods.map((method) => (
-          <Methods value={method} onChange={onInputChange} key={method} />
+          <Methods
+            method={method}
+            methodSelected={method}
+            onChange={onInputChange}
+            key={method}
+          />
         ))}
         <button>Go!</button>
       </section>
@@ -22,6 +27,8 @@ function Form({ onSubmit, onInputChange, url, json }) {
 Form.propTypes = {
   onInputChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  url: PropTypes.string.isRequired,
+  json: PropTypes.string.isRequired,
 };
 
 export default Form;

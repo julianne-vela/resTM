@@ -1,36 +1,50 @@
 import React, { Component } from 'react';
 import Form from '../components/controls/Form';
+import { makeRequest } from '../services/apiUtils';
 export default class RestellaContainer extends Component {
   state = {
     loading: false,
     method: '',
-    url: '',
-    json: '',
+    urlValue: '',
+    jsonValue: '',
+    results: [],
   };
 
-  handleFormSubmit = (e) => {
+  handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    const { method, urlValue, jsonValue } = this.state;
+    let results;
+
     this.setState({ loading: true });
-    console.log('submitted!'); // TODO replace w/ API call
-    this.setState({ loading: false });
+
+    try {
+      results = await makeRequest(method, urlValue, jsonValue);
+    } catch (error) {
+      results = `Oh no! Something went wrong: ${error.message}`;
+    }
+
+    this.setState({
+      loading: false,
+      results,
+    });
   };
 
-  handleInputChange = ({ target }) => {
-    const value = target.value;
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
     this.setState({
-      ...state,
-      [target.name]: value,
+      [name]: value,
     });
   };
 
   render() {
-    const { url, json } = this.state;
+    const { urlValue, jsonValue } = this.state;
     return (
       <Form
         onSubmit={this.handleFormSubmit}
         onInputChange={this.handleInputChange}
-        url={url}
-        json={json}
+        url={urlValue}
+        json={jsonValue}
       />
     );
   }

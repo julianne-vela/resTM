@@ -1,18 +1,16 @@
 import React from 'react';
 
-function UrlInput({ url, onInputChange }) {
+function UrlInput({ value, onChange }) {
   return (
-    <>
-      <label htmlFor="url-input"></label>
+    <label>
       <input
         type="url"
-        id="url-input"
         placeholder="URL"
-        value={url}
-        name="url"
-        onChange={onInputChange}
+        value={value}
+        name="urlValue"
+        onInput={onChange}
       />
-    </>
+    </label>
   );
 }
 
