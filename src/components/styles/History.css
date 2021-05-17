@@ -11,3 +11,18 @@ h3.title {
   padding: 0.1em;
   border-bottom: 1px solid var(--blue);
 }
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+}
+
+.historyItem {
+  display: flex;
+  flex-direction: column;
+  border: 2px dotted var(--blue);
+  overflow: hidden;
+  margin: 0.5em;
+}

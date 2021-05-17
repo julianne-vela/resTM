@@ -18,14 +18,13 @@ export default class RestellaContainer extends Component {
   handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const { methodValue, urlValue, jsonValue } = this.state;
+    const { methodValue, urlValue, jsonValue, history } = this.state;
     let response;
 
     this.setState({ loading: true });
 
     try {
       response = await makeRequest(methodValue, urlValue, jsonValue);
-      console.log(response);
     } catch (error) {
       response = `Oh no! Something went wrong: ${error.message}`;
     }
@@ -33,6 +32,9 @@ export default class RestellaContainer extends Component {
     this.setState({
       loading: false,
       response,
+      history: history.includes(urlValue)
+        ? history
+        : [...history, { method: methodValue, url: urlValue }],
     });
   };
 

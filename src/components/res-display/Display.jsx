@@ -4,9 +4,26 @@ import ReactJson from 'react-json-view';
 import style from '../styles/Display.css';
 
 function JsonViewer({ srcJson }) {
+  const viewStyles = {
+    width: '100%',
+    borderRadius: '10px',
+    padding: '5px',
+    overflow: 'auto',
+    msOverflowStyle: 'none',
+    scrollbarWidth: 'none',
+    WebkitScrollbarStyle: 'none',
+  };
   return (
     <section className={style.resDisplay}>
-      <ReactJson src={srcJson} />
+      <ReactJson
+        src={srcJson}
+        name={'response'}
+        theme={'solarized'}
+        style={viewStyles}
+        collapseStringsAfterLength={80}
+        collapsed={2}
+        displayDataTypes={false}
+      />
     </section>
   );
 }

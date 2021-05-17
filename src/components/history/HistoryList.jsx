@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import HistoryItem from './HistoryItem';
 import style from '../styles/History.css';
 
 function HistoryList({ history }) {
@@ -7,15 +8,15 @@ function HistoryList({ history }) {
     <section className={style.historyView}>
       <h3 className={style.title}>Request History</h3>
 
-      <ul aria-label="request-history" className={style.historyList}>
+      <section aria-label="request-history" className={style.historyList}>
         {history.map((entry, i) => (
-          <li>
-            <HistoryItem
-              key={`${i} + '-' + ${entry.method} + '-' + ${entry.url}`}
-            />
-          </li>
+          <HistoryItem
+            method={entry.method}
+            url={entry.url}
+            key={`${entry.method} + '-' + ${entry.url} + '-' + ${i}`}
+          />
         ))}
-      </ul>
+      </section>
     </section>
   );
 }

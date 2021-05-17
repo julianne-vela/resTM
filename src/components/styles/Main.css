@@ -23,11 +23,16 @@
 /* Grid Setup */
 main.App {
   display: grid;
+  height: 100vh;
   grid-template-columns: 2fr 6fr;
-  grid-template-rows: 2fr 3fr 3fr;
+  grid-template-rows: repeat(8, 1fr);
   grid-template-areas:
     'header header header header'
     'History Form Form Form'
+    'History Form Form Form'
+    'History Form Form Form'
+    'History Display Display Display'
+    'History Display Display Display'
     'History Display Display Display'
     'History Display Display Display';
 }

@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from '../styles/History.css';
 
-function HistoryItem({ method, URL }) {
+function HistoryItem({ method, url }) {
   return (
-    <article>
-      <label>{method}</label>
-      <span>{URL}</span>
-    </article>
+    <span className={style.historyItem}>
+      {method}: {url}
+    </span>
   );
 }
 
 HistoryItem.propTypes = {
-  URL: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   method: PropTypes.string.isRequired,
 };
 
