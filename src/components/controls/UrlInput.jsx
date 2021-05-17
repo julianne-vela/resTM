@@ -1,8 +1,9 @@
 import React from 'react';
+import style from '../styles/Form.css';
 
 function UrlInput({ value, onChange }) {
   return (
-    <label>
+    <label className={style.url}>
       <input
         type="url"
         placeholder="URL"

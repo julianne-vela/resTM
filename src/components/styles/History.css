@@ -1,0 +1,10 @@
+section.historyList {
+  display: flex;
+  flex-direction: column;
+  grid-area: History;
+}
+
+h3.title {
+  padding: 0.1em;
+  border-bottom: 1px solid var(--blue);
+}

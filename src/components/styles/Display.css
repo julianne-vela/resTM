@@ -1,0 +1,4 @@
+section.resDisplay {
+  display: flex;
+  grid-area: Display;
+}

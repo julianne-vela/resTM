@@ -1,0 +1,48 @@
+@import './Main.css';
+
+section.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: Form;
+  border-bottom: 1px solid var(--blue);
+}
+
+h3.title {
+  padding: 0.1em;
+  border-bottom: 1px solid var(--blue);
+}
+
+form.userForm {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+/* Radio Button Method Styles */
+.methods {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+}
+
+.radio {
+  cursor: pointer;
+  padding: 0.35em;
+  color: var(--blue);
+}
+
+.methods input[type='radio'] {
+  display: none;
+}
+
+.methods input[type='radio']:checked + label {
+  font-weight: bold;
+  text-shadow: 0 0 15px var(--coral);
+}
+
+.url > input {
+  margin-bottom: 0.5em;
+  width: 100%;
+}
