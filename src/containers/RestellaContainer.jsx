@@ -3,7 +3,7 @@ import Form from '../components/controls/Form';
 import Header from '../components/app/Header';
 import { makeRequest } from '../services/apiUtils';
 import HistoryList from '../components/history/HistoryList';
-import JsonViewer from '../components/res-display/JsonViewer';
+import Display from '../components/res-display/Display';
 
 export default class RestellaContainer extends Component {
   state = {
@@ -12,26 +12,27 @@ export default class RestellaContainer extends Component {
     urlValue: '',
     jsonValue: '',
     history: [],
-    response: '',
+    response: [],
   };
 
   handleFormSubmit = async (e) => {
     e.preventDefault();
 
     const { methodValue, urlValue, jsonValue } = this.state;
-    let results;
+    let response;
 
     this.setState({ loading: true });
 
     try {
-      results = await makeRequest(methodValue, urlValue, jsonValue);
+      response = await makeRequest(methodValue, urlValue, jsonValue);
+      console.log(response);
     } catch (error) {
-      results = `Oh no! Something went wrong: ${error.message}`;
+      response = `Oh no! Something went wrong: ${error.message}`;
     }
 
     this.setState({
       loading: false,
-      results,
+      response,
     });
   };
 
@@ -43,7 +44,7 @@ export default class RestellaContainer extends Component {
   };
 
   render() {
-    const { urlValue, jsonValue, response, methodValue } = this.state;
+    const { urlValue, jsonValue, response, methodValue, history } = this.state;
     return (
       <>
         <Header />
@@ -54,8 +55,8 @@ export default class RestellaContainer extends Component {
           url={urlValue}
           json={jsonValue}
         />
-        <HistoryList />
-        <JsonViewer srcJson={response} />
+        <HistoryList history={history} />
+        <Display srcJson={response} />
       </>
     );
   }

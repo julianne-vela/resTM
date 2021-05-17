@@ -6,11 +6,21 @@ section.form {
   justify-content: space-evenly;
   grid-area: Form;
   border-bottom: 1px solid var(--blue);
+  background-color: var(--blue);
+}
+
+.form button {
+  border-radius: 10px;
+  background-color: var(--pink);
+  color: var(--coral);
+  font-weight: bold;
 }
 
 h3.title {
+  font-family: var(--bodyText);
+  font-weight: 300;
   padding: 0.1em;
-  border-bottom: 1px solid var(--blue);
+  border-bottom: 1px solid var(--coral);
 }
 
 form.userForm {
@@ -30,7 +40,7 @@ form.userForm {
 .radio {
   cursor: pointer;
   padding: 0.35em;
-  color: var(--blue);
+  color: var(--coral);
 }
 
 .methods input[type='radio'] {
@@ -39,7 +49,7 @@ form.userForm {
 
 .methods input[type='radio']:checked + label {
   font-weight: bold;
-  text-shadow: 0 0 15px var(--coral);
+  text-shadow: 0 0 15px var(--yellow);
 }
 
 .url > input {

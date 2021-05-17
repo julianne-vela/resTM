@@ -1,4 +1,6 @@
 section.resDisplay {
   display: flex;
   grid-area: Display;
+  background-color: var(--pink);
+  padding: 0.5em;
 }
