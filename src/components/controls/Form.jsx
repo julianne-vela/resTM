@@ -9,7 +9,7 @@ function Form({ onSubmit, onInputChange, url, json, methodValue }) {
   const methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
 
   return (
-    <section className={style.form}>
+    <section aria-label="request-form" className={style.form}>
       <h3 className={style.title}>Make an HTTP Request Below</h3>
 
       <form className={style.userForm} onSubmit={onSubmit}>

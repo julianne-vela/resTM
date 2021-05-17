@@ -14,7 +14,7 @@ function JsonViewer({ srcJson }) {
     WebkitScrollbarStyle: 'none',
   };
   return (
-    <section className={style.resDisplay}>
+    <section aria-label="results-display" className={style.resDisplay}>
       <ReactJson
         src={srcJson}
         name={'response'}
