@@ -1,0 +1,103 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fira+Code&family=Montserrat:wght@300;400&display=swap');
+
+/* Base Default Colors/Fonts
+   ========================================================================== */
+:root {
+  /* Colors */
+  --yellow: #f6bd60ff;
+  --linen: #f7ede2ff;
+  --pink: #f5cac3ff;
+  --blue: #84a59dff;
+  --coral: #f28482ff;
+
+  /* Fonts */
+  --headerText: 'Dancing Script', cursive;
+  --bodyText: 'Montserrat', sans-serif;
+  --codeText: 'Fira Code', monospace;
+}
+
+/* Document
+   ========================================================================== */
+
+/* Grid Setup */
+main.App {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 6fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas:
+    'header header header header'
+    'History Form Form Form'
+    'History Form Form Form'
+    'History Form Form Form'
+    'History Display Display Display'
+    'History Display Display Display'
+    'History Display Display Display'
+    'History Display Display Display';
+}
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  height: 100vh;
+}
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+  background-color: var(--linen);
+  font-family: var(--bodyText);
+  height: 100vh;
+}
+
+div#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/**
+* Set base margin for text elements in all browsers.
+*/
+
+p,
+h1,
+h2,
+h3 {
+  margin: 3px;
+}

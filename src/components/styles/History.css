@@ -1,0 +1,28 @@
+section.historyView {
+  display: flex;
+  flex-direction: column;
+  grid-area: History;
+  background-color: var(--yellow);
+}
+
+h3.title {
+  font-family: var(--bodyText);
+  font-weight: 300;
+  padding: 0.1em;
+  border-bottom: 1px solid var(--blue);
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+}
+
+.historyItem {
+  display: flex;
+  flex-direction: column;
+  border: 2px dotted var(--blue);
+  overflow: hidden;
+  margin: 0.5em;
+}

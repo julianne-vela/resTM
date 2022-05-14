@@ -1,0 +1,17 @@
+section.resDisplay {
+  display: flex;
+  grid-area: Display;
+  background-color: var(--pink);
+  padding: 0.5em;
+}
+
+div.react-json-view {
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+div.react-json-view::-webkit-scrollbar {
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  display: none;
+}

@@ -1,0 +1,22 @@
+@import './Main.css';
+
+header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+  padding-bottom: 0.5em;
+  background-color: var(--coral);
+}
+
+header h1 {
+  font-family: var(--headerText);
+  font-size: 3rem;
+  text-align: center;
+}
+
+header h3 {
+  font-family: var(--bodyText);
+  font-size: 0.9em;
+  font-weight: 300;
+  text-align: center;
+}
