@@ -11,7 +11,7 @@ Development:
   - `npm install`
 - Run app
   - `npm run start`
-  - Open browser to localhost:3000
+  - Open browser to localhost:7891
 
 Usage: 
 - Enter an API url that you want to test (eg. `https://jsonplaceholder.typicode.com/users/1/todos`)
